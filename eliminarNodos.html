@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Eliminar Elementos en el DOM</title>
+  </head>
+  <body>
+    <header class="border">
+    <h1 class="text-cent" id="titulo">METODOS DEL DOM</h1>
+      <p class="text-cent">
+        La estructura del DOM, Eliminar los nodos en el
+        Documento HTML mediante los metodos
+      </p>
+      <section class="text-cent">
+        <strong class="fs-1">Métodos para Eliminar Nodos </strong> <br />
+        Utilizar los siguientes métodos para Eliminar uno o más elementos en tu
+        página. <br /><br />
+        <a href="https://developer.mozilla.org/es/docs/Web/API/Node/appendChild" target="_blank">Ir a la Documentacion</a>
+      </section>
+    </header>
+    <nav class="nav">
+      <ul class="flex-wrap">
+          <li class="li">Manipulacion del DOM</li>
+          <li class="li"><a class="li" href="index.html">Inicio</a></li>
+          <li class="li"><a class="li" href="selecionarNodos.html">Metodos</a></li>
+          <li class="li"><a class="li" href="crearNodos.html">Crear</a></li>
+          <li class="li"><a class="li" href="eliminarNodos.html">Eliminar</a></li>
+          <li class="li"><a class="li" href="eventosDom.html">Eventos</a></li>
+      </ul>
+  </nav>
+    <main>
+      <table class="table table-success table-hover">
+        <thead>
+          <tr>
+            <td colspan="3" class="text-center"><b>ELIMINAR NODOS</b>
+            </td>
+          </tr>
+        </thead>
+        <thead>
+          <tr class="text-center">
+            <th class="col-sm-2">METODO</th>
+            <th class="col-sm-6">DESCRIPCION</th>
+            <th class="col-sm-4">EJEMPLO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Remove Child</b></td>
+            <td>Podemos eliminar un nodo según a un método que proviene del padre y pasamos la referencia a eliminar:  <br> padre.removeChild(nodoAEliminar) <br>
+            tambien podemos utilizar la propiedad parentElement
+            <td>
+              // seleccionar le nodo a eliminar <br>
+              const nodoAEliminar = document.querySelector('h3'); <br>
+
+              // Seleccionar el padre directo del elemento a eliminar <br>
+              const padre = document.querySelector('div'); <br>
+
+              //Eliminar el Nodo <br>
+              padre.removeChild(nodoAEliminar); <br>
+              
+              // propiedad parentElement <br>
+              const nodoAEliminar = document.querySelector('h3'); <br>
+              nodoAEliminar.parentElement.removeChild(nodoAEliminar);
+
+            </td>
+          </tr>
+          <tr>
+            <td><b>Remove</b></td>
+            <td>
+              Es la evolución de remove child pero No esta soportado en internet explorer
+            </td>
+            <td>
+              // eliminar directamente <br>
+              document.querySelector('a').remove() <br>
+
+              // 1. Seleccionar el nodo a eliminar <br>
+              const eli = document.querySelector('.gb_d') <br>
+
+              // 2. Eliminar nodo seleccionado <br>
+              eli.remove(); <br>
+            </td>
+          </tr>
+          <tr>
+            <td><b>Replace Child </b></td>
+            <td>
+              Nos permite remplazar un nodo <br>
+              padre.replaceChild(nuevoNodo, aRemplazar)
+            </td>
+            <td>
+              // 1. seleccionar el padre del elemento a reemplazar <br>
+              const padre = document.querySelector('center'); <br>
+              // 2. Seleccionar elemento hijo a reeemplazar <br>
+              const areemplazar = document.querySelector('.gNO89b'); <br>
+              // 3. crear nuevo elemento para reemplazar <br>
+              const nuevo = document.createElement('h2'); <br>
+              // 4. crear contenido para el h2 creado <br>
+              nuevo.textContent = "GoogleBusy"; <br>
+              // 5. Realizar el reemplazo <br>
+              padre.replaceChild(nuevo, areemplazar);
+
+            </td>
+          </tr>
+          <tr>
+        </tbody>
+      </table>  
+      
+    </main>
+    <footer class="border footer">
+      &copy; 2023 | Instructor: Pablo Ortiz G. <br>
+      Centro de Teleinformática y Producción Industrial <br>
+      Regional - Cauca
+  </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

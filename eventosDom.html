@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Eventos del DOM</title>
+  </head>
+  <body>
+    <header>
+    <h1 class="text-cent" id="titulo">EVENTOS DEL DOM</h1>
+      <p class="text-cent">
+        La estructura del DOM, permite interactuar con los nodos en el
+        Documento HTML mediante los Eventos
+      </p>
+      <section class="text-cent">
+        <strong class="fs-1">Eventos para interactuar con Nodos </strong> <br />
+        Utilizar los siguientes Eventos para interactuar con los nodos del documento HTML <br /><br />
+        <a href="https://developer.mozilla.org/es/docs/Web/Events" target="_blank">Ir a la Documentacion</a>
+      </section>
+    </header>
+    <nav class="nav">
+      <ul class="flex-wrap">
+          <li class="li">Manipulacion del DOM</li>
+          <li class="li"><a class="li" href="index.html">Inicio</a></li>
+          <li class="li"><a class="li" href="selecionarNodos.html">Metodos</a></li>
+          <li class="li"><a class="li" href="crearNodos.html">Crear</a></li>
+          <li class="li"><a class="li" href="eliminarNodos.html">Eliminar</a></li>
+          <li class="li"><a class="li" href="eventosDom.html">Eventos</a></li>
+      </ul>
+  </nav>
+    <main>
+      <table class="table table-success table-hover">
+        <thead>
+          <tr>
+            <td colspan="3" class="text-center"><b>EVENTOS DEL MOUSE</b>
+            </td>
+          </tr>
+        </thead>
+        <thead>
+          <tr class="text-center">
+            <th class="col-sm-2">EVENTO</th>
+            <th class="col-sm-4">DESCRIPCION</th>
+            <th class="col-sm-6">EJEMPLO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Click</b></td>
+            <td>cuando se pulsa el botón izquierdo del ratón
+            <td>
+              // seleccionar le nodo donde se nesecita un evento <br>
+              const button = document.querySelector('#button'); <br>
+
+              // Crear la Funcion deseada segun el evento <br>
+                button.addEventListener('click', () => {
+                console.log('Me HIciste Click')
+                 }) 
+
+            </td>
+          </tr>
+          <tr>
+            <td><b>dblclick</b></td>
+            <td>
+                cuando se pulsa dos veces seguidas el botón izquierdo del ratón
+            </td>
+            <td>
+              // seleccionar le nodo donde se nesecita un evento <br>
+              const button = document.querySelector('#button'); <br>
+
+              // Crear la Funcion deseada segun el evento <br>
+                button.addEventListener('dblclick',()=> {
+                console.log('DOBLE CLICK')
+                });
+
+            </td>
+          </tr>
+          <tr>
+            <td><b>mouseenter </b></td>
+            <td>
+            cuando se entra en la zona que tiene el evento
+            </td>
+            <td>
+                // seleccionar le nodo donde se nesecita un evento <br>
+                const button = document.querySelector('#box'); <br>
+              // 2. Seleccionar elemento hijo a reeemplazar <br>
+              box.addEventListener('mouseenter', () => {
+                box.classList.replace('red', 'green')
+                })
+            </td>
+          </tr>
+          <tr>
+            <td><b>mouseleave </b></td>
+            <td>
+            cuando se sale en la zona que tiene el evento
+            </td>
+            <td>
+                // seleccionar le nodo donde se nesecita un evento <br>
+                const button = document.querySelector('#box'); <br>
+              // 2. Seleccionar elemento hijo a reeemplazar <br>
+              box.addEventListener('mouseleave', () => {
+                box.classList.replace('green', 'red')
+            })
+            </td>
+          </tr>
+          <tr>
+            <td><b>mousedown </b></td>
+            <td>
+                cuando se mantiene pusado el boton izquierdo del ratón
+            </td>
+            <td>
+                // seleccionar le nodo donde se nesecita un evento <br>
+                const button = document.querySelector('#box'); <br>
+              // 2. Seleccionar elemento hijo a reeemplazar <br>
+              box.addEventListener('mousedown', () => {
+                console.log('HAS PULSADO EN LA CAJA');
+                })
+            </td>
+          </tr>
+          <tr>
+            <td><b>mouseup </b></td>
+            <td>
+                cuando se suelta el boton izquierdo del ratón
+            </td>
+            <td>
+                // seleccionar le nodo donde se nesecita un evento <br>
+                const button = document.querySelector('#box'); <br>
+              // 2. Seleccionar elemento hijo a reeemplazar <br>
+              box.addEventListener('mouseup', () => {
+                console.log('HAS SOLTADO EL BOTON IZQUIERDO EN LA CAJA')
+              })
+            </td>
+          </tr>
+          <tr>
+            <td><b>mousemove </b></td>
+            <td>
+                cuando se mueve ratón swntro del area del evento
+            </td>
+            <td>
+                // seleccionar le nodo donde se nesecita un evento <br>
+                const button = document.querySelector('#box'); <br>
+              // 2. Seleccionar elemento hijo a reeemplazar <br>
+              box.addEventListener('mousemove', () => {
+                console.log('ESTAS MOVIENDO EL RATON EN LA CAJA');
+                })
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" class="text-center"><b>EVENTOS DEL TECLADO</b></td>
+          </tr>
+          <tr>
+            <td><b>keydown </b></td>
+            <td>
+                cuando se pulsa una tecla
+            </td>
+            <td>
+                // seleccionar le nodo donde se nesecita un evento <br>
+                const input = document.querySelector('#input'); <br>
+              // 2. Seleccionar elemento hijo a reeemplazar <br>
+                input.addEventListener('keydown', () => {
+                console.log('HAS PULSADO UNA TECLA');
+                })
+            </td>
+          </tr>
+          <tr>
+            <td><b>keyup </b></td>
+            <td>
+                cuando se suelta una tecla
+            </td>
+            <td>
+                // seleccionar le nodo donde se nesecita un evento <br>
+                const input = document.querySelector('#input'); <br>
+              // 2. Seleccionar elemento hijo a reeemplazar <br>
+                input.addEventListener('keyup', () => {
+                console.log('HAS SOLTADO UNA TECLA')
+                })
+            </td>
+          </tr>
+          <tr>
+            <td><b>keypress </b></td>
+            <td>
+                cuando se mantiene sostenida una tecla
+            </td>
+            <td>
+                // seleccionar le nodo donde se nesecita un evento <br>
+                const input = document.querySelector('#input'); <br>
+              // 2. Seleccionar elemento hijo a reeemplazar <br>
+                input.addEventListener('keypress', () => {
+                console.log('ESTÁS PULSANDO UNA TECLA')
+                })
+            </td>
+          </tr>
+        </tbody>
+      </table>  
+      
+    </main>
+    <footer class="border footer">
+      &copy; 2023 | Instructor: Pablo Ortiz G. <br>
+      Centro de Teleinformática y Producción Industrial <br>
+      Regional - Cauca
+  </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

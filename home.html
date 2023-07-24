@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style/style.css">
+    
+    <title>DOM - Document Object Model</title>
+</head>
+<body class=" mt-2">
+    <header class="flex-wrap justify-cont border">
+        <img class="logo" src="img/logo.svg" alt="Sena">
+        <div class="text-cent">
+            <h1>Desarrollo de Software</h1>
+            <h3>DOM - Document Object Model </h3>
+        </div>
+        <img class="logo" src="img/js.png" alt="JS">
+    </header>
+    <nav class="nav">
+        <ul class="flex-wrap">
+            <li class="li"><a class="li" href="index.html">Manipulacion del DOM </a></li>
+            <li class="li"><a class="li" href="index.html">Inicio</a></li>
+            <li class="li"><a class="li" href="selecionarNodos.html">Metodos</a></li>
+            <li class="li"><a class="li" href="crearNodos.html">Crear</a></li>
+            <li class="li"><a class="li" href="eliminarNodos.html">Eliminar</a></li>
+            <li class="li"><a class="li" href="eventosDom.html">Eventos</a></li>
+        </ul>
+    </nav>
+    <section class="border criticalRender space">
+        <h2>Critical Rendering Path - Ruta Critica de Procesamiento</h2>
+        <article class="d-flex flex-wrap ">
+            <p class="concept pm-12 pg-6 flex-wrap">Critical Render Path se refiere a la secuencia de pasos
+                que el navegador realiza para recibir código en HTML,
+                CSS y JavaScript y convertirlos en la vista inicial de
+                una página web. <br> <br>
+                La ruta de procesamiento crítica es la secuencia de
+                pasos que sigue el navegador para convertir HTML,
+                CSS y JavaScript en píxeles en la pantalla. <br><br>
+                La ruta de renderización crítica incluye el modelo de
+                objetos de documento ( el modelo de objetos
+                CSS ) el árbol de renderización y el diseño</p>
+            <div class="pm-12 pg-6 flex-wrap">
+            <img src="img/renderp.png" alt="CRP">
+            </div>
+        </article>
+    </section>
+   
+    <section class="border criticalRender space">
+        <h2>DOM -Document Object Model</h2>
+        <article class="d-flex flex-wrap ">
+            <img class="pm-12 pg-6 flex-wrap" src="img/dom.png" alt="DOM">
+            <p class="concept pm-12 pg-6 flex-wrap"> La construcción de DOM es incremental La
+            respuesta HTML se convierte en tokens que se
+            convierten en NODOS que se convierten en el árbol
+            DOM Un solo nodo DOM comienza con un token
+            startTag y termina con un token endTag Los nodos
+            contienen toda la información relevante sobre el
+            elemento HTML La información se describe
+            mediante tokens Los nodos están conectados en
+            un árbol DOM según la jerarquía de tokens Si otro
+            conjunto de tokens startTag y endTag se encuentra
+            entre un conjunto de startTag y endTags tiene un
+            nodo dentro de un nodo, que es como definimos la
+            jerarquía del árbol DOM. <br> <br>
+            
+            Cuanto mayor sea el número de nodos, más
+            tardarán los siguientes eventos en la ruta de
+            renderización crítica ..¡La medida! Unos pocos
+            nodos adicionales no marcarán la diferencia, pero
+            la divitis puede provocar jank <br><br>
+            - Interpreta el HTML. <br>
+            - Estructura los nodos en forma de arbol. <br>
+            - El modelo se Puede Modificar.
+        </p>
+            
+        </article>
+    </section>
+   
+    <section class="border criticalRender space">
+        <h2>CSSOM - CSS Object Model</h2>
+        <article class="d-flex flex-wrap ">
+            <p class="concept pm-12 pg-6 flex-wrap"> El CSSOM contiene todos los estilos de la
+                página información sobre cómo diseñar ese
+                DOM. CSSOM es similar al DOM, pero diferente Si
+                bien la construcción del DOM es incremental, CSSOM
+                no lo es <br> <br> CSS el navegador bloquea el procesamiento de la página hasta que
+                recibe y procesa todo el CSS. CSS bloquea el
+                procesamiento porque las reglas se pueden
+                sobrescribir, por lo que el contenido no se puede
+                procesar hasta que el CSSOM esté completo <br> <br>
+            </p>
+            <img class="pm-12 pg-6 flex-wrap" src="img/cssom.png" alt="CSSOM">
+        </article>
+    </section>
+    <section class="border criticalRender space">
+        <h2>WEB API - Application Programming Interface</h2>
+        <article class="d-flex flex-wrap ">
+            <img class="pm-12 pg-6 flex-wrap" src="img/webapi.png" alt="API">
+            <p class="concept pm-12 pg-6 flex-wrap"> Un
+                Application Programming Interface (Interfaz de
+                programación de aplicaciones), abreviado como API
+                es un conjunto de subrutinas, funciones y
+                procedimientos (o métodos, en la programación
+                orientada a objetos) que ofrece cierta biblioteca
+                para ser utilizado por otro software como una capa
+                de abstracción <br><br>
+                Uno de los principales propósitos de una API
+                consiste en proporcionar un conjunto de
+                funciones de uso general por ejemplo, para
+                dibujar ventanas o iconos en la pantalla De esta
+                forma, los programadores se benefician de las
+                ventajas del API haciendo uso de su funcionalidad,
+                evitándose el trabajo de programar todo desde el
+                principio<br> <br>
+            </p>
+            
+        </article>
+    </section>
+    <footer class="border footer">
+        &copy; 2023 | Instructor: Pablo Ortiz G. <br>
+        Centro de Teleinformática y Producción Industrial <br>
+        Regional - Cauca
+    </footer>
+    <br>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Crear Elementos en el DOM</title>
+  </head>
+  <body>
+    <header class="border">
+      
+    <h1 class="text-cent" id="titulo">METODOS DEL DOM</h1>
+      <p class="text-cent">
+        La estructura del DOM, crear los nodos en el
+        Documento HTML mediante los metodos
+      </p>
+      <section class="px-2 text-cent">
+        <strong class="fs-1">Métodos para Crear Nodos </strong> <br />
+        Utilizar los siguientes métodos para crear uno o más elementos en tu
+        página. <br /><br />
+        <a href="https://developer.mozilla.org/es/docs/Web/API/Document#m%C3%A9todos" target="_blank">Ir a la Documentacion</a>
+      </section>
+    </header>
+    <nav class="nav">
+      <ul class="flex-wrap">
+          <li class="li">Manipulacion del DOM</li>
+          <li class="li"><a class="li" href="index.html">Inicio</a></li>
+          <li class="li"><a class="li" href="selecionarNodos.html">Metodos</a></li>
+          <li class="li"><a class="li" href="crearNodos.html">Crear</a></li>
+          <li class="li"><a class="li" href="eliminarNodos.html">Eliminar</a></li>
+          <li class="li"><a class="li" href="eventosDom.html">Eventos</a></li>
+      </ul>
+  </nav>
+    <main>
+      <table class="table table-success table-hover">
+        <thead>
+          <tr>
+            <td colspan="3" class="text-center"><b>CREAR NODOS</b>
+            </td>
+          </tr>
+        </thead>
+        <thead>
+          <tr class="text-center">
+            <th>METODO</th>
+            <th>DESCRIPCION</th>
+            <th>EJEMPLO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>document.createElement(' ')</b></td>
+            <td>Mediante el método .createElement() podemos crear un elemento HTML en memoria <b>(¡no estará insertado aún en nuestro documento HTML!)</b>. Con dicho elemento almacenado en una variable, podremos modificar sus características o contenido, para posteriormente insertarlo en una posición determinada del DOM o documento HTML.</td>
+            <td>
+              <b>Creamos un Elemento DIV</b> <br>
+              const div = document.createElement("div");
+            </td>
+          </tr>
+          <tr>
+            <td><b>document.createTextNode("Texto")</b></td>
+            <td>
+              Permite Crear nodos de texto sin etiqueta HTML, pasándole a ambos un String con el texto en cuestión. En ambos, se devuelve un Node que <b>podremos utilizar luego para insertar en el documento HTML</b>
+            </td>
+            <td>
+              <b>Crear un nodo de texto con la palabra Hola Mundo</b> <br />
+              const text = document.createTextNode("Hola Mundo");
+            </td>
+          </tr>
+          <tr>
+            <td><b>document.createComment('Texto de comentario') </b></td>
+            <td>
+              Permite crear comentarios HTML con createComment()
+            </td>
+            <td>
+              <b>Crear comenario para el codigo</b> <br />
+              const comment = document.createComment("Comentario");
+            </td>
+          </tr>
+          <tr>
+        </tbody>
+      </table>  
+      <table class="table table-success table-hover">  
+        <thead>
+          <tr>
+            <td colspan="3" class="text-center"><b>INSERTAR NODOS</b>
+            </td>
+          </tr>
+        </thead>
+        <thead>
+          <tr class="text-center">
+            <th>METODO</th>
+            <th>DESCRIPCION</th>
+            <th>EJEMPLO</th>
+          </tr>
+        </thead>
+        <tbody> 
+          </tr>
+          <tr>
+            <td><b>appendChild</b></td>
+            <td>
+              Este método nos permite agregar un elemento (Nodo) al final de la lista de hijos de un elemento padre previamente especificado, es decir, agrega un elemento dentro de un padre, y este es colocado al final. Es importante resaltar que si el Nodo que se esta insertando existe en el documento actual, es una referencia, este sera removido del padre actual y sera puesto dentro del padre que se esta especificando. por otro lado este método retorna o devuelve el elemento Nodo insertado. Supongamos que tenemos una lista, y queremos insertar un nuevo elemento con el texto “Item 3”, lo haremos de la siguiente manera
+            </td>
+            <td>
+              // Seleccionar el Luar donde va el nuevo Nodo <br> 
+              const container = document.querySelector("#contain"); <br>
+
+              // Crear el nodo o elemento a agregar <br>
+              const h3 = document.createElement("h3"); <br>
+
+              // Agregar el nodo al ugar seleccionado <br>
+              container.appendChild(h3)
+
+
+              // Crear un texto para insertarlo al nodo creado
+              const text = document.createTextNode("Hola Mundo"); <br>
+
+              // Insertamos el texto dentro del item <br>
+              h3.appendChild(text); <br>
+
+            </td>
+          </tr>
+          <tr>
+            <td><b>append</b></td>
+            <td>
+              Este método es una evolución de appendChild, donde podemos agregar más de un nodo, cosa que no podemos hacer en el método anterior, podemos agregar texto. Este también agrega los nodos al final de los hijos del elemento padre especificado, y no retorna ningún elemento. No tiene soporte adecuado para IE 11.
+            </td>
+            <td>const container = document.querySelector("ul.container"); <br>
+              const item = document.createElement("li"); <br>
+              const subItem = document.createElement("ul"); <br>
+              
+              // Agregamos el texto de item, adicional insertamos la nueva lista <br>
+              item.append("Categorias", subItem); <br>
+              
+              // Agremos el item al menu <br>
+              container.append(item); <br>
+
+              // modo inline <br>
+              conainer.append('Texto', document.createElement('div'))
+            </td>
+          </tr>
+          <tr>
+            <td><b>insertBefore</b></td>
+            <td>
+              Este método permite insertar o agregar un nodo, antes del nodo que pasemos de referencia, y que pertenece al padre del que estamos accediendo a dicho método. Si insertamos un Nodo que ya esta en nuestro DOM el método lo cambia de lugar, es decir, lo quita de donde se encuentra actualmente y lo inserta en el sitio al que estamos haciendo referencia. Este método recibe dos argumentos, el primero de ellos es el Nodo que queremos insertar, y el segundo es el Nodo de referencia.
+            </td>
+            <td>
+              // Seleccionar el Luar donde va el nuevo Nodo <br> 
+              const container = document.querySelector("#contain"); <br>
+
+              // Crear el nodo o elemento a agregar <br>
+              const h3 = document.createElement("h3"); <br>
+
+              // Crear la referencia (debe ser elemento siguiente)<br>
+              const referencia = document.querySelector(".titulo");
+
+              // Agregar el nodo antes de la referencia <br>
+              container.insertBefore(h3, referencia)
+            </td>
+          </tr>
+          <tr>
+            <td><b>insertAdjacentElement</b></td>
+            <td>
+              Este método permite insertar un nodo de acuerdo a una posición especificada, y lo ubica con respecto al elemento sobre el cual es llamado. Es el que más opciones de inserción nos proporciona. Este método recibe 2 argumentos, el primero de ellos donde se insertará el nuevo nodo, para esto contamos con cuatro opciones, las cuales son: <br>
+
+              <b>beforebegin:</b> Inserta el elemento antes de la referencia. Es decir, antes del nodo que llama al método en cuestión. <br>
+              <b>afterbegin:</b> Insertar el nodo dentro del elemento referencia, pero ademas de esto lo inserta antes de su primer hijo. <br>
+              <b>beforeend:</b> Al igual que la opción anterior lo agrega dentro del elemento referencia, con la particularidad de que ahora lo inserta después de su ultimo hijo. <br>
+              <b>afterend:</b> Inserta el elemento después del nodo referencia, es decir, despues del nodo que llama al método.
+                          </td>
+            <td>
+              // Seleccionar el Luar donde va el nuevo Nodo <br> 
+              const container = document.querySelector("#contain"); <br>
+
+              // Crear la referencia (debe ser elemento siguiente)<br>
+              const referencia = document.querySelector(".titulo");
+
+              // Crear el nodo o elemento a agregar <br>
+              const h3 = document.createElement("h3"); <br>
+
+              // Agregar el nodo segun la referencia <br>
+              referencia.insertAdjacentElement('beforebegin', h3) <br>
+              referencia.insertAdjacentElement('afterbegin', h3) <br>
+              referencia.insertAdjacentElement('beforeend', h3) <br>
+              referencia.insertAdjacentElement('afterend', h3) <br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <footer class="border footer">
+      &copy; 2023 | Instructor: Pablo Ortiz G. <br>
+      Centro de Teleinformática y Producción Industrial <br>
+      Regional - Cauca
+  </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

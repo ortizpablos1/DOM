@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Metodos del DOM</title>
+    <link rel="stylesheet" href="./style/style.css">
+  </head>
+  <body>
+    <header class="border">
+      <h1 class="text-cent" id="titulo">METODOS DEL DOM</h1>
+      <p class="text-cent">
+        La estructura del DOM, permite seleccionay acceder a los nodos del
+        Documento HTML mediante los metodos
+      </p>
+      <section class="px-2 text-cent">
+        <strong class="fs-1">Métodos para Seleccionar Nodos </strong>
+        <br />
+        Utilizar los siguientes métodos para encontrar y seleccionar uno o más
+        elementos en tu página. <br /><br />
+        <a target="_blank" href="https://developer.mozilla.org/es/docs/Web/API/Document"
+          >Ir a la Documentacion</a
+        >
+      </section>
+    </header>
+    <nav class="nav">
+      <ul class="flex-wrap">
+          <li class="li">Manipulacion del DOM</li>
+          <li class="li"><a class="li" href="index.html">Inicio</a></li>
+          <li class="li"><a class="li" href="selecionarNodos.html">Metodos</a></li>
+          <li class="li"><a class="li" href="crearNodos.html">Crear</a></li>
+          <li class="li"><a class="li" href="eliminarNodos.html">Eliminar</a></li>
+          <li class="li"><a class="li" href="eventosDom.html">Eventos</a></li>
+      </ul>
+  </nav>
+  
+
+    <table class="table table-success table-hover">
+      <thead>
+        <tr class="text-center">
+          <th>METODO</th>
+          <th>DESCRIPCION</th>
+          <th>EJEMPLO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>document.getElementById('id')</b></td>
+          <td>Permite Acceder a un elemento a través de su id</td>
+          <td>
+            1. document.getElementById('titulo') <br />
+            1.1. const titulo = document.getElementById('titulo') <br />
+            titulo.textContent = 'DOM - Accediendo a nodos'
+          </td>
+        </tr>
+        <tr>
+          <td><b>document.getElementsByClassName('nombreDeClase')</b></td>
+          <td>
+            Permite Accede al primer elemento que coincida con el selector CSS,
+            obtiene un array con todos los elementos hijos que tengan esa clase,
+            ojo no podremos obtener solo 1 elemento con esa clase.
+          </td>
+          <td>
+            2. document.getElementsByClassName('border') <br />
+            2.1. document.getElementsByClassName('fs-1')
+          </td>
+        </tr>
+        <tr>
+          <td><b>document.getElementsByTagName('nombreDeEtiqueta') </b></td>
+          <td>
+            Permite Acceder al elemento por el nombre de la Etiqueta,
+            document.getElementsByTagName('p') => con este método obtenemos una
+            lista o “array list” con todos los elementos que tengan esa
+            etiqueta, ejemplo todos los P. Al igual que con el método anterior
+            no hay posibilidad de usarlo en singular.
+          </td>
+          <td>
+            3. document.getElementsByTagName('p') <br />
+            3.1. document.getElementsByTagName('b')
+          </td>
+        </tr>
+        <tr>
+          <td><b>document.querySelector('selector')</b></td>
+          <td>
+            Permite Acceder al primer elemento por medio de el selector,
+            document.querySelector(' ') => nos permite buscar de 3 formas, con
+            id, clase o tagName. A diferencia de los 2 anteriores este nos
+            devuelve 1 solo elemento, el primero que contenga el valor que se le
+            paso. Id => (’#id’), class => (’.border’), tagName (‘p’)
+          </td>
+          <td>
+            4. document.querySelector('.border') <br />
+            4.1. document.querySelector('p') <br />
+            4.2. document.querySelector('#titulo')
+          </td>
+        </tr>
+        <tr>
+          <td><b>document.querySelectorAll('selector')</b></td>
+          <td>
+            Permite Acceder a todos los elementos por medio de el selector,
+            document.querySelectorAll('') => este método retorna una array list
+            con todos los elementos que tengan ese selector (id, class o
+            tagName) Casi siempre el elemento “padre o parent” es document. ya
+            que estamos haciendo referencia a todo el DOM, todo el documento y
+            esto en ciertos casos nos permite evitar errores. <br />
+            ejemplo = const button = document.querySelector(’#button)
+          </td>
+          <td>document.querySelectorAll('.paragraph')</td>
+        </tr>
+      </tbody>
+    </table>
+    <footer class="border footer">
+      &copy; 2023 | Instructor: Pablo Ortiz G. <br>
+      Centro de Teleinformática y Producción Industrial <br>
+      Regional - Cauca
+  </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

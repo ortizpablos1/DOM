@@ -1,0 +1,111 @@
+*{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+}
+body{
+    background-image: url(../img/back.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+header{
+    width: 100%;
+}
+article{
+    width: 50%;
+}
+nav{
+    width: 50%;
+}
+h1{
+    font-size: calc(1.175rem + 1.5vw);
+}
+.nav{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex-justify{
+    justify-content: center;
+    align-items: center;
+}
+.li{
+    list-style: none;
+    text-decoration: none;
+    margin: 5px;
+    padding: 3px;
+
+}
+@media screen and (max-width: 700px){
+    
+    .pm-12{
+        width: 100%;
+    }
+    .pm-6{
+        width: 50%;
+    }
+}
+@media screen and (min-width: 701px){
+    
+    .pg-12{
+        width: 100%;
+    }
+    .pg-6{
+        width: 50%;
+    }
+}
+.logo{
+    width: 10%;
+}
+.name{
+    width: 80%;
+    margin-left: 15px;
+}
+
+
+.descripcion{
+    text-align: end;
+    width: 50%;
+}
+.imagen{
+    text-align: center;
+    width: 50%;
+}
+.footer{
+    margin: 10px;   
+    padding: 10px; 
+    text-align: end;
+    border-radius: 5px;
+    color: black;
+    /* background-color: #00324D;
+    opacity: 10%; */
+    
+}
+.dom{
+    font-size: calc(0.175rem + 1.5vw);
+}
+.explorar{
+        color: #fff;
+        font-size: 25px;
+        border: 1 px solid #146c43 ;
+        background-color: #146c43;
+        box-shadow: 60, 153, 110;
+        border-radius: 50px;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        width: 200px;
+        height: 50px;
+}
+.explorar:hover{
+    color: #fff;
+    font-size: 26px;
+    border: 1 px solid #146c43 ;
+    background-color: #329064;
+    border-radius: 50px;
+    width: 200px;
+    height: 50px;
+}
